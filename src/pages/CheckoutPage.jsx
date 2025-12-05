@@ -69,101 +69,78 @@ function CheckoutPage() {
 
       <div className="checkout-grid">
         {/* FORM */}
-        <form className="checkout-card" onSubmit={handlePlaceOrder}>
-          <h2 className="section-heading">Shipping Information</h2>
+        <form className="checkout-form" onSubmit={handlePlaceOrder}>
+  <h2 className="section-title">Shipping Information</h2>
 
-          <label className="form-label">
-            Full Name
-            <input
-              className="input"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </label>
+  <div className="form-group">
+    <label>Full Name</label>
+    <input value={name} onChange={(e) => setName(e.target.value)} />
+  </div>
 
-          <label className="form-label">
-            Address
-            <input
-              className="input"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-            />
-          </label>
+  <div className="form-group">
+    <label>Address</label>
+    <input value={address} onChange={(e) => setAddress(e.target.value)} />
+  </div>
 
-          <label className="form-label">
-            City
-            <input
-              className="input"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-            />
-          </label>
+  <div className="form-group">
+    <label>City</label>
+    <input value={city} onChange={(e) => setCity(e.target.value)} />
+  </div>
 
-          <label className="form-label">
-            Province
-            <select
-              className="input"
-              value={province}
-              onChange={(e) => setProvince(e.target.value)}
-            >
-              <option value="Quebec">Quebec</option>
-              <option value="Ontario">Ontario</option>
-              <option value="Alberta">Alberta</option>
-              <option value="British Columbia">British Columbia</option>
-              <option value="Other">Other</option>
-            </select>
-          </label>
+  <div className="form-group">
+    <label>Province</label>
+    <select value={province} onChange={(e) => setProvince(e.target.value)}>
+      <option value="Quebec">Quebec</option>
+      <option value="Ontario">Ontario</option>
+      <option value="Alberta">Alberta</option>
+      <option value="British Columbia">British Columbia</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
 
-          <label className="form-label">
-            Postal Code
-            <input
-              className="input"
-              value={postalCode}
-              onChange={(e) => setPostalCode(e.target.value)}
-            />
-          </label>
+  <div className="form-group">
+    <label>Postal Code</label>
+    <input value={postalCode} onChange={(e) => setPostalCode(e.target.value)} />
+  </div>
 
-          <h2 className="section-heading">Payment Method</h2>
+  <h2 className="section-title">Payment Method</h2>
 
-          <label className="radio">
-            <input
-              type="radio"
-              checked={paymentMethod === "credit"}
-              value="credit"
-              onChange={(e) => setPaymentMethod(e.target.value)}
-            />
-            Credit Card
-          </label>
+  <div className="form-group">
+    <label><input type="radio" checked={paymentMethod==="credit"} value="credit" onChange={(e)=>setPaymentMethod(e.target.value)} /> Credit Card</label>
+    <label><input type="radio" checked={paymentMethod==="paypal"} value="paypal" onChange={(e)=>setPaymentMethod(e.target.value)} /> PayPal</label>
+    <label><input type="radio" checked={paymentMethod==="bank"} value="bank" onChange={(e)=>setPaymentMethod(e.target.value)} /> Bank Transfer</label>
+  </div>
 
-          <label className="radio">
-            <input
-              type="radio"
-              checked={paymentMethod === "paypal"}
-              value="paypal"
-              onChange={(e) => setPaymentMethod(e.target.value)}
-            />
-            PayPal
-          </label>
+  {error && <p className="error-text">{error}</p>}
 
-          <label className="radio">
-            <input
-              type="radio"
-              checked={paymentMethod === "bank"}
-              value="bank"
-              onChange={(e) => setPaymentMethod(e.target.value)}
-            />
-            Bank Transfer
-          </label>
+  <button className="btn primary full-width">Place Order</button>
+</form>
 
-          {error && <p className="form-error">{error}</p>}
+        <div className="order-summary">
+  <h3>Order Summary</h3>
 
-          <button className="btn primary full-width checkout-btn">
-            Place Order
-          </button>
-        </form>
+  <div className="summary-row">
+    <span>Subtotal</span>
+    <span>${subtotal.toFixed(2)}</span>
+  </div>
 
-        {/* SUMMARY */}
-        <CartSummary subtotal={subtotal} gst={gst} qst={qst} total={total} />
+  <div className="summary-row">
+    <span>GST (5%)</span>
+    <span>${gst.toFixed(2)}</span>
+  </div>
+
+  <div className="summary-row">
+    <span>QST (9.975%)</span>
+    <span>${qst.toFixed(2)}</span>
+  </div>
+
+  <div className="summary-divider"></div>
+
+  <div className="summary-row total">
+    <span>Total</span>
+    <span>${total.toFixed(2)}</span>
+  </div>
+</div>
       </div>
     </section>
   );
