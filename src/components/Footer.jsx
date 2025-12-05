@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-inner">
-        <div>
-          <h4>Quick Links</h4>
+      <div className="footer-container">
+
+        {/* MENU */}
+        <div className="footer-column">
+          <h3>Menu</h3>
+          {/* Original ReactShop links */}
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -13,25 +16,78 @@ function Footer() {
             <li>
               <Link to="/cart">Cart</Link>
             </li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+
+          
+        </div>
+
+        {/* SOCIAL */}
+        <div className="footer-column">
+          <h3>Social</h3>
+          <ul className="social-links">
             <li>
-              <a href="#!" aria-disabled="true">
-                Contact (coming soon)
+              <a href="#">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+                  width="32"
+                  style={{ verticalAlign: "middle", marginRight: "8px", filter: "invert(1)" }}
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg"
+                  width="32"
+                  style={{ verticalAlign: "middle", marginRight: "8px", filter: "invert(1)" }}
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+                  width="32"
+                  style={{ verticalAlign: "middle", marginRight: "8px", filter: "invert(1)" }}
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/indeed.svg"
+                  width="32"
+                  style={{ verticalAlign: "middle", marginRight: "8px", filter: "invert(1)" }}
+                />
               </a>
             </li>
           </ul>
         </div>
-        <div>
-          <h4>Follow Us</h4>
-          <div className="social-icons">
-            <span>Instagram</span>
-            <span>Facebook</span>
-            <span>X</span>
-          </div>
-        </div>
-        <div>
-          <p>© {new Date().getFullYear()} ReactShop. All rights reserved.</p>
+
+        {/* CONTACT FORM */}
+        <div className="footer-column wide">
+          <h2>Let’s stay connected</h2>
+          <p>Reach out about a project, collaboration or just to say hello!</p>
+
+          <form className="footer-form">
+            <label>Email*</label>
+            <input type="email" required />
+
+            <label>Message*</label>
+            <textarea required></textarea>
+
+            <button type="submit" className="send-button">Send</button>
+          </form>
         </div>
       </div>
+
+      <p style={{ marginTop: "20px" }}>
+        © {new Date().getFullYear()} ReactShop. All rights reserved.
+      </p>
     </footer>
   );
 }
