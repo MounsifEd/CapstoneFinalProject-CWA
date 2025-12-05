@@ -1,7 +1,6 @@
 import ProductCard from "/ProductCard";
 
 export default function ProductList({ products = [] }) {
-  // Handle empty product list
   if (products.length === 0) {
     return (
       <div className="product-list-empty">
@@ -12,7 +11,6 @@ export default function ProductList({ products = [] }) {
 
   return (
     <div className="product-list">
-      {/* Product grid */}
       <div className="products-grid">
         {products.map((product) => (
           <ProductCard 
