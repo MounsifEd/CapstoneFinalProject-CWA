@@ -27,29 +27,39 @@ function ReviewForm({ onSubmit }) {
     <form className="review-form" onSubmit={handleSubmit}>
       <h3>Add a Review</h3>
 
-      {/* ⭐ Replaced the <select> with clickable star input */}
-      <label>Rating</label>
-      <StarRatingInput value={rating} onChange={setRating} />
+      {/* RATING FIELD */}
+      <div className="form-group">
+        <label htmlFor="rating-input">Rating</label>
+        <StarRatingInput id="rating-input" value={rating} onChange={setRating} />
+      </div>
 
-      <label>
-        Your name (optional)
-        <input
-          type="text"
-          value={name}
-          placeholder="Anonymous"
-          onChange={(e) => setName(e.target.value)}
-        />
-      </label>
+      {/* NAME FIELD */}
+      <div className="form-group">
+        <label htmlFor="reviewerName">
+          Your name (optional)
+          <input
+            id="reviewerName"
+            type="text"
+            value={name}
+            placeholder="Anonymous"
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
+      </div>
 
-      <label>
-        Review
-        <textarea
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          rows={4}
-          required
-        />
-      </label>
+      {/* REVIEW FIELD */}
+      <div className="form-group">
+        <label htmlFor="reviewText">
+          Review
+          <textarea
+            id="reviewText"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            rows={4}
+            required
+          />
+        </label>
+      </div>
 
       <button type="submit" className="btn primary">
         Submit Review
