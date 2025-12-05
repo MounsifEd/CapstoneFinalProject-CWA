@@ -12,7 +12,7 @@ export function ReviewsProvider({ children }) {
   );
 
   useEffect(() => {
-    saveReviewsToStorage(userReviews); // ✅ Persist user reviews in localStorage
+    saveReviewsToStorage(userReviews);
   }, [userReviews]);
 
   const addReview = (productId, review) => {
@@ -31,8 +31,8 @@ export function ReviewsProvider({ children }) {
   };
 
   const value = {
-    addReview,               // ✅ "Submit a review"
-    getAllReviewsForProduct, // used to show both API + user reviews, and to compute avg rating
+    addReview,
+    getAllReviewsForProduct,
   };
 
   return (
