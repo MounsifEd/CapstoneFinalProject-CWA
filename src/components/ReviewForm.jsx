@@ -1,4 +1,5 @@
 import { useState } from "react";
+import StarRatingInput from "./StarRatingInput";
 
 function ReviewForm({ onSubmit }) {
   const [rating, setRating] = useState(5);
@@ -25,39 +26,40 @@ function ReviewForm({ onSubmit }) {
   return (
     <form className="review-form" onSubmit={handleSubmit}>
       <h3>Add a Review</h3>
-      <label>
-        Rating
-        <select
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-        >
-          {[5, 4, 3, 2, 1].map((r) => (
-            <option key={r} value={r}>
-              {r}
-            </option>
-          ))}
-        </select>
-      </label>
 
-      <label>
-        Your name (optional)
-        <input
-          type="text"
-          value={name}
-          placeholder="Anonymous"
-          onChange={(e) => setName(e.target.value)}
-        />
-      </label>
+      {/* RATING FIELD */}
+      <div className="form-group">
+        <label htmlFor="rating-input">Rating</label>
+        <StarRatingInput id="rating-input" value={rating} onChange={setRating} />
+      </div>
 
-      <label>
-        Review
-        <textarea
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          rows={4}
-          required
-        />
-      </label>
+      {/* NAME FIELD */}
+      <div className="form-group">
+        <label htmlFor="reviewerName">
+          Your name (optional)
+          <input
+            id="reviewerName"
+            type="text"
+            value={name}
+            placeholder="Anonymous"
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
+      </div>
+
+      {/* REVIEW FIELD */}
+      <div className="form-group">
+        <label htmlFor="reviewText">
+          Review
+          <textarea
+            id="reviewText"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            rows={4}
+            required
+          />
+        </label>
+      </div>
 
       <button type="submit" className="btn primary">
         Submit Review

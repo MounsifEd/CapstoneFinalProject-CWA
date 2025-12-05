@@ -31,42 +31,293 @@ a {
   width: 100%;
 }
 
-/* Header */
+/* ============================= */
+/*          HEADER (NEW)         */
+/* ============================= */
 
 .header {
-  background-color: #000000;
+  background-color: #0f1111; 
   color: white;
+  border-bottom: 1px solid #222;
 }
 
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .logo {
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
+  color: #fff;
+  letter-spacing: 0.5px;
 }
 
 .nav {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .nav-link {
-  padding: 0.25rem 0.5rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 4px;
+  font-size: 0.95rem;
+  transition: background 0.15s ease, color 0.15s ease;
+  color: #d1d5db;
+}
+
+.nav-link:hover {
+  background-color: #232f3e;
+  color: #ffffff;
 }
 
 .nav-link.active {
-  background-color: #1f2937;
+  background-color: #374151;
+  color: white;
 }
 
-/* Footer */
+.cart-count {
+  background-color: #f08804;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: black;
+  margin-left: 4px;
+  font-weight: 600;
+}
+
+/* -----------------------------------------------------------
+   MODERN REVIEW SECTION
+----------------------------------------------------------- */
+
+.product-detail-reviews {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  border: 1px solid #e5e7eb;
+}
+
+
+.review-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #eef0f3;
+  transition: background 0.2s ease;
+}
+
+.review-item:hover {
+  background: #fafafa;
+  border-radius: 12px;
+  padding-left: 0.75rem;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+
+.review-rating {
+  font-weight: 700;
+  color: #f59e0b;
+}
+
+
+.review-text {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #374151;
+}
+
+
+.review-date {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* -----------------------------------------------------------
+   Form styling (modern glass / soft look)
+----------------------------------------------------------- */
+
+/* Container for the entire form */
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Spacing between form groups */
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+/* New container for each field (Label + Input/Component) */
+.form-group {
+  /* This ensures the label and its field are tightly grouped, taking up the full width */
+  display: flex;
+  flex-direction: column;
+}
+/* This targets the label itself */
+/* This targets the label itself */
+.review-form label {
+  display: block; /* Important for stacking the label above the field */
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px; /* Space between the label text and the input field/component */
+}
+
+/* Inputs, Selects, and Textareas */
+.review-form input,
+.review-form select,
+.review-form textarea {
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: white;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  /* Ensure these take up the full width of the .form-group */
+  width: 100%;
+}
+
+.review-form input:focus,
+.review-form select:focus,
+.review-form textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0px 0px 7px rgba(37, 99, 235, 0.3);
+  background: #fff;
+}
+
+.review-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+
+.btn.primary {
+  background: linear-gradient(90deg, #b91c1c, #7f1d1d);
+  font-size: 1.05rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.15);
+  background: linear-gradient(90deg, #7f1d1d, #5a0e0e);
+}
+
+
+.review-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+
+.review-form label + * {
+  margin-bottom: 18px;
+}
+
+
+.star-rating-input {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+
+.star-rating-input .star-icon {
+  width: 32px;
+  height: 32px;
+  fill: #ccc;
+  cursor: pointer;
+  transition: fill 0.2s ease, transform 0.15s ease;
+}
+
+
+.star-rating-input .star-icon.filled {
+  fill: #ffc107;
+}
+
+
+.star-rating-input .star-icon:hover {
+  transform: scale(1.15);
+}
+
+
+/* ============================================================
+   RATING STARS (interactive + read-only)
+============================================================ */
+
+.rating-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 1.4rem;
+  user-select: none;
+}
+
+.rating-stars .star {
+  color: #d1d5db;
+  transition: color 0.2s ease;
+}
+
+.rating-stars .star.filled {
+  color: #fbbf24;
+}
+
+
+.rating-stars.interactive .star {
+  cursor: pointer;
+}
+
+.rating-stars.interactive .star:hover {
+  color: #fcd34d;
+}
+
+.rating-stars .rating-value {
+  margin-left: 4px;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.star-rating-input {
+  display: flex;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.star-rating-input .star-icon {
+  width: 28px;
+  height: 28px;
+  fill: #ccc;
+  transition: fill 0.2s ease, transform 0.15s ease;
+}
+
+.star-rating-input .star-icon.filled {
+  fill: #ffc107;
+}
+
+.star-rating-input .star-icon:hover {
+  transform: scale(1.1);
+}
+
+
+/* ============================= */
+/*             FOOTER            */
+/* ============================= */
 
 .footer {
   background-color: #111827;
@@ -314,7 +565,9 @@ a {
   box-shadow: 0px 0px 6px rgba(37, 99, 235, 0.25);
 }
 
-
+/* ============================= */
+/*            RATINGS            */
+/* ============================= */
 
 .rating-stars {
   font-size: 0.9rem;
