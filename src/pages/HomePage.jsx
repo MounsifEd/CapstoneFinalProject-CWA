@@ -159,9 +159,6 @@ function HomePage() {
       </div>
       <div className="product-grid">
         {filteredProducts.map((product) => {
-          // For listing, you could recompute average dynamic rating if you want.
-          // Here, we just use product.rating for simplicity.
-          // Optionally:
           const allReviews = getAllReviewsForProduct(
             product.id,
             product.reviews || []

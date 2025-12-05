@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import RatingStars from "../Components/RatingStars";
+import RatingStars from "../components/RatingStars";
 import { useCart } from "../context/CartContext";
 
 function ProductCard({ product, averageRating }) {
