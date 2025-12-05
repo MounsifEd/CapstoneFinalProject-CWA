@@ -1,3 +1,5 @@
+import RatingStars from "./RatingStars";
+
 function ReviewList({ reviews }) {
   if (!reviews || reviews.length === 0)
     return <p>No reviews yet. Be the first to review!</p>;
@@ -8,9 +10,13 @@ function ReviewList({ reviews }) {
         <div key={idx} className="review-item">
           <div className="review-header">
             <strong>{review.reviewerName || review.name || "Anonymous"}</strong>
-            <span>Rating: {review.rating}/5</span>
+
+            {/* ⭐ Replace text rating with RatingStars */}
+            <RatingStars rating={review.rating} />
           </div>
+
           <p className="review-text">{review.comment || review.text}</p>
+
           {review.date && (
             <small className="review-date">
               {new Date(review.date).toLocaleDateString()}

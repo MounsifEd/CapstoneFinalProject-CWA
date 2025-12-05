@@ -1,4 +1,5 @@
 import { useState } from "react";
+import StarRatingInput from "./StarRatingInput";
 
 function ReviewForm({ onSubmit }) {
   const [rating, setRating] = useState(5);
@@ -25,19 +26,10 @@ function ReviewForm({ onSubmit }) {
   return (
     <form className="review-form" onSubmit={handleSubmit}>
       <h3>Add a Review</h3>
-      <label>
-        Rating
-        <select
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-        >
-          {[5, 4, 3, 2, 1].map((r) => (
-            <option key={r} value={r}>
-              {r}
-            </option>
-          ))}
-        </select>
-      </label>
+
+      {/* ⭐ Replaced the <select> with clickable star input */}
+      <label>Rating</label>
+      <StarRatingInput value={rating} onChange={setRating} />
 
       <label>
         Your name (optional)
