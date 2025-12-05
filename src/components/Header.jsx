@@ -9,8 +9,8 @@ function Header() {
       <div className="header-inner">
 
         {/* Logo */}
-        <Link to="/" className="logo">
-          ReactShop
+        <Link to="https://www.canva.com/design/DAG6rVKYqtQ/377HX50ML7GNtJwfIeVfrA/edit?utm_content=DAG6rVKYqtQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" className="logo">
+          EMD Shop
         </Link>
 
         {/* Simple Navigation */}
