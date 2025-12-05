@@ -513,6 +513,7 @@ a {
 
 /* Summary card stays untouched (CartSummary component uses your old CSS) */
 .order-summary {
+  margin-top: 20px;
   background: white;
   padding: 1.25rem;
   border-radius: 10px;
