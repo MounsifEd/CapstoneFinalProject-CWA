@@ -1,7 +1,7 @@
 const BASE_URL = 'https://dummyjson.com';
 
 export async function fetchAllProducts() {
-  const res = await fetch(`${BASE_URL}/products?limit=0`); // limit=0 => all items :contentReference[oaicite:1]{index=1}
+  const res = await fetch(`${BASE_URL}/products?limit=0`); 
   if (!res.ok) throw new Error('Failed to fetch products');
   const data = await res.json();
   return data.products;
