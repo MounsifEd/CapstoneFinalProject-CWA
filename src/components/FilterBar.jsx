@@ -1,9 +1,3 @@
-/**
- * FiltersBar Component
- * Sidebar component for filtering products by category, price range, rating, etc.
- * Props: onFilterChange (callback when filters are updated)
- */
-
 import { useState } from 'react';
 
 export default function FiltersBar({ onFilterChange }) {
