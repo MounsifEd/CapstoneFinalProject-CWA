@@ -27,7 +27,7 @@ function CheckoutPage() {
     e.preventDefault();
 
     if (!name || !address || !city || !province || !postalCode) {
-      setError("Please fill all shipping fields.");
+      setError("Please fill all required fields.");
       return;
     }
 
@@ -50,7 +50,7 @@ function CheckoutPage() {
       createdAt: new Date().toISOString(),
     };
 
-    saveLastOrderToStorage(order);  // ⭐ NEW
+    saveLastOrderToStorage(order);
     clearCart();
     navigate("/order-confirmation", { state: { order } });
   };
@@ -64,31 +64,48 @@ function CheckoutPage() {
     );
 
   return (
-    <section className="page checkout">
-      <h1>Checkout</h1>
+    <section className="page">
+      <h1 className="checkout-title">Checkout</h1>
 
-      <div className="checkout-layout">
-        <form className="checkout-form" onSubmit={handlePlaceOrder}>
-          <h2>Shipping Address</h2>
+      <div className="checkout-grid">
+        {/* FORM */}
+        <form className="checkout-card" onSubmit={handlePlaceOrder}>
+          <h2 className="section-heading">Shipping Information</h2>
 
-          <label>
+          <label className="form-label">
             Full Name
-            <input value={name} onChange={(e) => setName(e.target.value)} />
+            <input
+              className="input"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </label>
 
-          <label>
+          <label className="form-label">
             Address
-            <input value={address} onChange={(e) => setAddress(e.target.value)} />
+            <input
+              className="input"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+            />
           </label>
 
-          <label>
+          <label className="form-label">
             City
-            <input value={city} onChange={(e) => setCity(e.target.value)} />
+            <input
+              className="input"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+            />
           </label>
 
-          <label>
-            Province / State
-            <select value={province} onChange={(e) => setProvince(e.target.value)}>
+          <label className="form-label">
+            Province
+            <select
+              className="input"
+              value={province}
+              onChange={(e) => setProvince(e.target.value)}
+            >
               <option value="Quebec">Quebec</option>
               <option value="Ontario">Ontario</option>
               <option value="Alberta">Alberta</option>
@@ -97,50 +114,55 @@ function CheckoutPage() {
             </select>
           </label>
 
-          <label>
+          <label className="form-label">
             Postal Code
             <input
+              className="input"
               value={postalCode}
               onChange={(e) => setPostalCode(e.target.value)}
             />
           </label>
 
-          <h2>Payment Method</h2>
-          <label>
+          <h2 className="section-heading">Payment Method</h2>
+
+          <label className="radio">
             <input
               type="radio"
               checked={paymentMethod === "credit"}
               value="credit"
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
-            Credit Card (simulated)
+            Credit Card
           </label>
 
-          <label>
+          <label className="radio">
             <input
               type="radio"
               checked={paymentMethod === "paypal"}
               value="paypal"
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
-            PayPal (simulated)
+            PayPal
           </label>
 
-          <label>
+          <label className="radio">
             <input
               type="radio"
               checked={paymentMethod === "bank"}
               value="bank"
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
-            Bank Transfer (simulated)
+            Bank Transfer
           </label>
 
-          {error && <p className="error-text">{error}</p>}
+          {error && <p className="form-error">{error}</p>}
 
-          <button className="btn primary full-width">Place Order</button>
+          <button className="btn primary full-width checkout-btn">
+            Place Order
+          </button>
         </form>
 
+        {/* SUMMARY */}
         <CartSummary subtotal={subtotal} gst={gst} qst={qst} total={total} />
       </div>
     </section>
