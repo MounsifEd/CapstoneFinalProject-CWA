@@ -116,6 +116,7 @@ function CheckoutPage() {
   <button className="btn primary full-width">Place Order</button>
 </form>
 
+
         <div className="order-summary">
   <h3>Order Summary</h3>
 
