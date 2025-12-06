@@ -69,24 +69,27 @@ function Footer() {
         </div>
 
         {/* CONTACT FORM */}
+       
         <div className="footer-column wide">
           <h2>Let’s stay connected</h2>
           <p>Reach out about a project, collaboration or just to say hello!</p>
 
           <form className="footer-form">
+            <div class="form-group">
             <label>Email*</label>
             <input type="email" required />
-
+            </div>
+            <div class="form-group">
             <label>Message*</label>
             <textarea required></textarea>
-
+            </div>
             <button type="submit" className="send-button">Send</button>
           </form>
         </div>
       </div>
 
       <p style={{ marginTop: "20px" }}>
-        © {new Date().getFullYear()} ReactShop. All rights reserved.
+        © {new Date().getFullYear()} EMD. All rights reserved.
       </p>
     </footer>
   );

@@ -935,10 +935,133 @@ a {
   border-bottom: none;
 }
 
-/* ============================= */
-/*          RESPONSIVE           */
-/* ============================= */
 
+
+
+.footer {
+    background: #000;
+    padding: 30px 30px;
+    color: white;
+    margin: 0;
+    background: #111;
+    font-family: Arial, sans-serif;
+    min-height: 350px;
+  }
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .footer-column {
+    min-width: 150px;
+  }
+  .footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    padding: 10px;
+  }
+  .social-links{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+  }
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  .footer-column a {
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+  .footer-column a:hover {
+    opacity: 0.7;
+  }
+  .footer-column.wide {
+    flex: 1;
+    min-width: 450px;
+  }
+  .footer-column.wide h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .footer-column.wide p {
+    margin-bottom: 20px;
+  }
+  .footer-form input{
+    height: 50px;
+  }
+  .footer-form textarea{
+    height: 50%;
+  }
+  form label {
+    display: block;
+    margin: 12px 0 5px;
+  }
+  form input {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    margin-bottom: 15px;
+  }
+  footer form textarea {
+    width: 100%;
+    padding: 14px;
+    height: 140px;
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+  form textarea {
+    height: 140px;
+    border-radius: 12px;
+  }
+  .send-button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+    height: 50%;
+    width: 100px;
+  }
+  .send-button:hover {
+    background: rgb(118, 6, 6);
+    color: rgb(255, 255, 255);
+  }
+
+  .footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .footer-form {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: space-between; 
+  }
+
+  .form-group {
+    flex: 1 1 45%;
+  }
+}
 @media (max-width: 768px) {
   .main-content {
     padding: 0.75rem;

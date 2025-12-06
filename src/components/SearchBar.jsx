@@ -1,9 +1,3 @@
-/**
- * SearchBar Component
- * Input field for searching products by name or keyword
- * Props: onSearch (callback function when user searches)
- */
-
 import { useState } from 'react';
 
 export default function SearchBar({ onSearch }) {
@@ -25,12 +19,12 @@ export default function SearchBar({ onSearch }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Search for:', searchTerm);
-    // Perform search logic here
+   
   };
 
   return (
     <form className="search-bar" onSubmit={handleSubmit}>
-      {/* Search input field */}
+
       <input
         type="text"
         placeholder="Search products..."
@@ -39,7 +33,6 @@ export default function SearchBar({ onSearch }) {
         className="search-input"
       />
 
-      {/* Search button */}
       <button type="submit" className="search-btn">
         🔍 Search
       </button>
