@@ -156,5 +156,3 @@ Step,                Requirement,      Details
 
     Includes quick links, placeholder social icons, and copyright information.
 
-
-Link to Vercel: ...
