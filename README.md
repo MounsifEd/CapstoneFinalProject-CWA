@@ -3,6 +3,9 @@ Mounsif,
 Dieudonne,
 Emmanuelle
 
+Link to Vercel:
+https://capstone-final-project-275m1ismj-mounsifeds-projects.vercel.app
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
