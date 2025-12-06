@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import logoImage from "../styles/logo.png"; 
 
 function Header() {
   const { itemCount } = useCart();
@@ -7,14 +8,12 @@ function Header() {
   return (
     <header className="header">
       <div className="header-inner">
-
-        {/* Logo */}
-        <Link to="https://www.canva.com/design/DAG6rVKYqtQ/377HX50ML7GNtJwfIeVfrA/edit?utm_content=DAG6rVKYqtQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" className="logo">
-          EMD Shop
+        <Link to="/" className="logo">
+          <img src={logoImage} alt="EMD Shop Logo" className="logo-img" />
+      
         </Link>
 
-        {/* Simple Navigation */}
-        <nav className="nav">
+        <nav className="nav">          
           <NavLink to="/" className="nav-link">
             Home
           </NavLink>
