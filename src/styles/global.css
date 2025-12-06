@@ -1034,7 +1034,14 @@ a {
     flex-wrap: wrap;
     justify-content: space-between; 
   }
-
+  .header-inner{
+     display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  }
   .form-group {
     flex: 1 1 45%;
   }
