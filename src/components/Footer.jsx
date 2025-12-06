@@ -13,12 +13,12 @@ function Footer() {
             <li>
               <Link to="/">Home</Link>
             </li>
+             <li><a href="#">Today's Deals</a></li>
+            <li><a href="#">Gift Cards</a></li>
+            <li><a href="#">About</a></li>
             <li>
               <Link to="/cart">Cart</Link>
             </li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
 

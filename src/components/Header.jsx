@@ -18,15 +18,15 @@ function Header() {
             Home
           </NavLink>
 
-          <NavLink to="/deals" className="nav-link">
+          <NavLink  to="#" className={({ isActive }) =>"nav-link disabled-link"}>
             Today's Deals
           </NavLink>
 
-          <NavLink to="/giftCards" className="nav-link">
+          <NavLink  to="#" className={({ isActive }) =>"nav-link disabled-link"}>
             Gift Cards
           </NavLink>
 
-          <NavLink to="/about" className="nav-link">
+          <NavLink  to="#" className={({ isActive }) =>"nav-link disabled-link"}>
             About
           </NavLink>
 
