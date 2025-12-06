@@ -24,7 +24,7 @@ If you are developing a production application, we recommend using TypeScript wi
 
 **Course:** Client Web Applications
 **Semester:** 2025
-**Deadline:** December 5th, 23:59
+
 
 This project is a fully functional, frontend-only e-commerce web application built using React and modern styling techniques. It utilizes the public DummyJSON API for product data and manages user-specific data (cart, reviews) using Local Storage.
 
